@@ -10,6 +10,7 @@
             try {
                 const proxyUrl = 'https://cors.bridged.cc/';
                 const targetUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://meinkerzenlichtketo.wordpress.com/feed/';
+                console.log('Fetching RSS feed:', proxyUrl + targetUrl);  // Debug: URL-Ausgabe
                 const response = await fetch(proxyUrl + targetUrl);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -19,6 +20,8 @@
                 const posts = data.items;
                 const postsContainer = document.getElementById('blog-posts');
                 console.log('Number of posts:', posts.length);  // Debug: Anzahl der Beiträge
+
+                postsContainer.innerHTML = '';  // Alte Einträge entfernen
 
                 posts.forEach(post => {
                     console.log('Post:', post);  // Debug: Ausgabe des aktuellen Beitrags
@@ -89,7 +92,7 @@
             <ul>
                 <li><a href="#about">Über uns</a></li>
                 <li><a href="was-ist-keto.html">Was ist Keto?</a></li>
-                <li><a href="#ebooks">E-Books</a></li>
+                <li><a href="https://meinkerzenlichtketo.wordpress.com/">Wordpress Blog</a></li>
             </ul>
         </nav>
     </header>
