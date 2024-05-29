@@ -5,6 +5,29 @@
     <title>Keto Ratgeber</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+	<script>
+        async function fetchPosts() {
+            try {
+                const response = await fetch('https://meinkerzenlichtketo.wordpress.com/');
+                const posts = await response.json();
+                const postsContainer = document.getElementById('blog-posts');
+
+                posts.forEach(post => {
+                    const postElement = document.createElement('article');
+                    postElement.innerHTML = `
+                        <h3>${post.title.rendered}</h3>
+                        <p>${post.excerpt.rendered}</p>
+                        <a href="${post.link}" target="_blank">Weiterlesen</a>
+                    `;
+                    postsContainer.appendChild(postElement);
+                });
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchPosts);
+    </script>
 	<style>
   @font-face {
     font-display: block;
@@ -92,6 +115,10 @@
 				<li><a href="https://bit.ly/4dXv4KR">E-Book 4: E-Book zur Entgiftung, Selbstheilung, Gesundheit + Ernährung</a></li>
             </ul>
         </section>
+		 </section>
+        <section id="blog-posts">
+            <h2>Blog</h2>
+            <!-- Beiträge werden hier eingefügt -->
 		<section id="newsletter">
             <h2>Newsletter Anmeldung</h2>
             <p>Melde dich zu meinem Newsletter an, um die neuesten Updates und Rezepte zu erhalten!</p>
