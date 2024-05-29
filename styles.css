@@ -8,8 +8,8 @@ body {
 }
 
 header {
-    background: #4CAF50;
-    color: #fff;
+    background: #fff;  
+    color: #4CAF50;  
     padding: 20px 0;
     display: flex;
     align-items: center;
@@ -21,12 +21,6 @@ header {
     max-width: 150px;
     height: auto;
     margin-left: 20px;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
 }
 
 nav ul {
@@ -42,7 +36,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #4CAF50;
     text-decoration: none;
     font-size: 1.2em;
 }
