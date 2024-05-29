@@ -12,6 +12,21 @@ header {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+}
+
+.header-logo {
+    max-width: 150px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
 nav ul {
@@ -19,6 +34,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 nav ul li {
